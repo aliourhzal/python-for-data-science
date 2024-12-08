@@ -2,6 +2,9 @@ import sys
 
 
 def main():
+    """
+        This Program takes a string and gives a precise number of characters and the number of upper letters, lower letters, punctuations, spaces and digits
+    """
     upper = 0
     lower = 0
     punc = 0
