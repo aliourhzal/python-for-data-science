@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+requires-python = ">= 3.10"
+authors = [
+    {name = "ali ourhzal", email = "aourhzal@student.1337.ma"}
+]
+description = "A sample test package"
+Homepage = "https://github.com/eagle/ft_package"
+license = {text = "MIT License"}
