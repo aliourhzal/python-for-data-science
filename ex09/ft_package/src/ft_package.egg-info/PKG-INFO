@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: ft_package
+Version: 0.0.1
+Summary: A sample test package
+Author-email: ali ourhzal <aourhzal@student.1337.ma>
+License: MIT
+Project-URL: Homepage, https://github.com/eagle/ft_package
