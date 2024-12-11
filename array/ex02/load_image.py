@@ -1,6 +1,5 @@
 import numpy as np
 from PIL import Image
-import os
 
 
 def ft_load(path: str) -> np.array:
@@ -16,7 +15,4 @@ def ft_load(path: str) -> np.array:
     except Exception as e:
         print(f"error: {str(e)}")
 
-
-
-print(ft_load("landscape.jpg"))
 
