@@ -1,5 +1,4 @@
 from load_image import ft_load
-import numpy as np
 from PIL import Image
 
 def main():
@@ -8,13 +7,12 @@ def main():
     img_arr = ft_load("animal.jpeg")
     if not len(img_arr):
         return 
-    print(img_arr)
     zoom = img_arr[start_x:start_x + 400, start_y:start_y + 400, 0:1];
-    print(f"New shape after slicing: {zoom.shape}")
+    print(f"New shape after slicing: {zoom.shape} or {zoom[:, :, 0].shape}")
     print(zoom)
-    new_img = Image.fromarray(zoom)
-    new_img.save("test.jpeg")
-    
+    new_img = Image.fromarray(zoom[:, :, 0])
+    new_img.save("zoom_animal.jpeg")
+
 
 if __name__ == "__main__":
     main()
