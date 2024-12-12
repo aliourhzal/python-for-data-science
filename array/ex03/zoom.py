@@ -8,9 +8,10 @@ def main():
     if not len(img_arr):
         return 
     zoom = img_arr[start_x:start_x + 400, start_y:start_y + 400, 0:1];
-    print(f"New shape after slicing: {zoom.shape} or {zoom[:, :, 0].shape}")
+    zoom_2d = zoom[:, :, 0]
+    print(f"New shape after slicing: {zoom.shape} or {zoom_2d.shape}")
     print(zoom)
-    new_img = Image.fromarray(zoom[:, :, 0])
+    new_img = Image.fromarray(zoom_2d)
     new_img.save("zoom_animal.jpeg")
 
 
