@@ -6,6 +6,9 @@ import numpy as np
 def to_number(data: pd.Series):
     value = data.values[1]
 
+    if isinstance(value, int):
+        return data
+
     if value.isalpha():
         return data
 
@@ -23,19 +26,17 @@ def main():
         if ley.empty or ipp.empty:
             return
         ley_1900 = ley[['country', '1900']]
-        ipp_1900 = ipp[['country', '2020']]
+        ipp_1900 = ipp[['country', '1900']]
+
         ipp_1900 = ipp_1900.apply(to_number, axis=1)
+        ley_1900 = ley_1900[~np.isnan(ley_1900['1900'])]
+        ley_1900 = ley_1900['1900'].astype(np.float16)
 
-        y_axis = ley_1900.values[:, 1]
-
-        # test = y_axis[~np.isnan(y_axis)]
-        print(type(y_axis))
-
-        # plt.scatter(ipp_1900.columns[], )
-        # test = ipp_1900.loc[ipp_1900['country'] == 'United States']
-        # print(test['2020'].values[0])
-        # print(type(test['2020'].values[0]))
-        # print(ipp_1900)
+        print(ipp_1900.values[1])
+        print(ley_1900)
+        
+        plt.scatter(ipp_1900.values[], ley_1900)
+        plt.show()
         
 
     # except Exception as e:
