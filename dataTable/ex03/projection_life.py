@@ -30,12 +30,15 @@ def main():
 
         ipp_1900 = ipp_1900.apply(to_number, axis=1)
         ley_1900 = ley_1900[~np.isnan(ley_1900['1900'])]
-        ley_1900 = ley_1900['1900'].astype(np.float16)
-
-        print(ipp_1900.values[1])
-        print(ley_1900)
         
-        plt.scatter(ipp_1900.values[], ley_1900)
+        ipp_1900 = ipp_1900[ipp_1900['country'].isin(ley_1900['country'])]
+
+        plt.scatter(ipp_1900['1900'].values, ley_1900['1900'].values)
+        plt.xscale('log')
+        plt.xticks([300, 1000, 10000], labels=['300', '1k', '10k'])
+        plt.xlabel('Gross domestic product')
+        plt.ylabel('Life Expectancy')
+        plt.title('1900')
         plt.show()
         
 
