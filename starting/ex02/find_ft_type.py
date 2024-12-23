@@ -6,7 +6,7 @@ def all_thing_is_obj(object: any) -> int:
     if isinstance(object, str):
         print(f"{object} is in the kitchen : {obj_type}")
     elif obj_type in types_set:
-        print(f"{obj_type.__name__.capitalize()} {obj_type}")
+        print(f"{obj_type.__name__.capitalize()} : {obj_type}")
     else:
         print("Type not found")
     return (42)
