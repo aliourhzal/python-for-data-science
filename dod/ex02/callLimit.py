@@ -13,43 +13,5 @@ def callLimit(limit: int):
     return callLimiter
 
 
-# @callLimit(3)
-# def f():
-#     print ("f()")
-
-# @callLimit(1)
-# def g():
-#     print ("g()")
-
-# for i in range(3):
-#     f()
-#     g()
-
-def decorator_wrapper(count):
-    def hello_decorator(func):
-        nonlocal count
-        count += 1
-        print(f"decorator used {count} times")
-        def exec_func(*args, **kwds):
-            print("before")
-            func(*args, **kwds)
-            print("after")
-        return exec_func
-    return hello_decorator
-
-decorator = decorator_wrapper(0)
-
-@decorator
-def test():
-    print("this is test function")
-
-test()
-
-@decorator
-def hello():
-    print("hello world")
-
-hello()
-
 
 
