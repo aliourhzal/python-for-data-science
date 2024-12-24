@@ -14,5 +14,5 @@ def NULL_not_found(object: any) -> int:
     elif isinstance(object, int):
         print(f"Zero: {object} {obj_type}")
     elif isinstance(object, str):
-        print(f"Empty: {object} {obj_type}")
+        print(f"Empty: {obj_type}")
     return (0)
